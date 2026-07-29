@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DifferentialGeometrySubmanifoldsMObiusTheoremCanonicalLaneLean.BridgeLemmas
+import DifferentialGeometrySubmanifoldsMObiusTheoremCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace DifferentialGeometrySubmanifoldsMObiusTheoremCanonicalLaneLean
+
+def ConstrainedDifferentialGeometrySubmanifoldsMObiusClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_differential_geometry_submanifolds_mobius_endgame (A : AdmissibleClass) :
+    ConstrainedDifferentialGeometrySubmanifoldsMObiusClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DifferentialGeometrySubmanifoldsMObiusTheoremCanonicalLaneLean
+end HautevilleHouse
